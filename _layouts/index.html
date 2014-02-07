@@ -1,0 +1,84 @@
+---
+layout: default
+---
+<section class="feature grid island">
+        <div class="wrapper">
+            {% for post in site.posts %}
+                {% if page.feature == post.title %}
+                    <div class="feature__description grid__item desk-one-half">
+                        <hgroup>
+                            <h2>Featured Project</h2>
+                            <h1>{{ post.title }}</h1>
+                        </hgroup>
+
+                        <p>{{ post.lede }}</p>
+
+                        <a class="btn" href="{{ post.url }}">View Project</a>
+                    </div><!--
+
+                 --><div class="feature__image">
+                        <a href="{{ post.url }}">
+                            <img class="grid__item push--lap-and-up-one-twelfth" src="{{ site.url }}{{ post.feature-image }}" />
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+<section id="works" class="portfolio-matrix grid island">
+    <div class="wrapper">
+        <h1 class="grid__item one-whole">Selected Works, 2013–14</h1><!--
+
+     -->{% for post in site.posts %}{% if page.feature != post.title %}<div class="grid__item {{ post.index-width }}">
+            <a class="portfolio-matrix__item" href="{{ post.url }}">
+                <img src="{{ site.url }}{{ post.index-thumb }}" />
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+            </a>
+        </div>{% endif %}{% endfor %}
+    </div>
+</section>
+
+<section id="profile" class="meta-block grid island">
+    <div class="wrapper">
+        <h1 class="meta-block__heading grid__item lap-and-up-one-sixth">Profile</h1><!--
+
+     --><div class="grid__item lap-and-up-two-thirds push--lap-and-up-one-twelfth">
+            {{ page.profile | markdownify }}
+
+            <hr class="rule" />
+        </div>
+    </div>
+</section>
+
+<section id="resume" class="meta-block grid island">
+    <div class="wrapper">
+        <h1 class="meta-block__heading grid__item lap-and-up-one-sixth">Résumé</h1><!--
+
+     --><div class="grid__item lap-and-up-two-thirds push--lap-and-up-one-twelfth">
+            {{ page.resume | markdownify }}
+
+            <hr class="rule" />
+        </div>
+    </div>
+</section>
+
+<section class="meta-block grid island">
+    <div class="wrapper">
+        <h1 class="meta-block__heading grid__item lap-and-up-one-sixth ss-icon">Like</h1><!--
+
+     --><ul class="grid__item one-half lap-and-up-one-third push--lap-and-up-one-twelfth nav nav--stacked">
+            {% for item in page.likes.people %}
+                <li><a href="{{ item[1] }}">{{ item[0] }}</a></li>
+            {% endfor %}
+        </ul><!--
+
+     --><ul class="grid__item one-half lap-and-up-one-third push--lap-and-up-one-twelfth nav nav--stacked">
+            {% for item in page.likes.products %}
+                <li><a href="{{ item[1] }}">{{ item[0] }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

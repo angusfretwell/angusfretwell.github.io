@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    $SCREENSHOTS
+\*------------------------------------*/
+
+
+.screenshot {
+    margin-bottom: $base-spacing-unit;
+
+    >img {
+        display: block;
+        width: 100%;
+    }
+}

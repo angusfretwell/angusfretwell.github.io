@@ -1,0 +1,53 @@
+/*------------------------------------*\
+    $PORTFOLIO-MATRIX
+\*------------------------------------*/
+
+
+.portfolio-matrix {
+    background: #f2f2f2;
+    margin-bottom: $base-spacing-unit;
+    padding-bottom: $base-spacing-unit / 2;
+
+    @include media-query(lap-and-up) {
+        margin-bottom: $base-spacing-unit * 2;
+    }
+
+    h1 {
+        @include font-size(18px);
+        padding-top: $base-spacing-unit / 4;
+
+        @include media-query(lap-and-up) {
+            padding-top: $base-spacing-unit * 1.5;
+            padding-bottom: $base-spacing-unit;
+        }
+    }
+}
+
+
+    .portfolio-matrix__item {
+        display: block;
+        border-bottom: 0;
+        background: #fff;
+        margin-bottom: $base-spacing-unit * 2.5;
+        line-height: inherit;
+
+        @include media-query(palm) {
+            margin: 0 (-$base-spacing-unit) $base-spacing-unit (-$base-spacing-unit);
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        h2 {
+            @include font-size(16px);
+            padding: $base-spacing-unit $base-spacing-unit 0;
+            margin-bottom: $base-spacing-unit * .25;
+        }
+
+        p {
+            padding: 0 $base-spacing-unit $base-spacing-unit;
+            margin: 0;
+        }
+    }

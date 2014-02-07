@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+    <title>{{ page.title }} — {{ site.name }}</title>
+
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="stylesheet" href="{{ site.url }}/css/style.min.css">
+    <script src="{{ site.url }}/js/vendor/modernizr-2.6.2.min.js"></script>
+
+    <script type="text/javascript" src="//use.typekit.net/kfq4yrq.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+    {% if page.path == 'index.html' %}<div class="feature-wrapper">{% endif %}
+        <header class="global-header {% if page.path == 'index.html' %}global-header--feature{% endif %} grid island">
+            <div class="wrapper">
+                <div class="global-header__logo grid__item two-thirds">
+                    <a href="{{ site.url }}">{{ site.name }}</a>
+                </div><!--
+
+             --><ul class="global-header__nav grid__item one-third nav">
+                    <li><a href="{{ site.url }}#works">Works</a></li>
+                    <li><a href="{{ site.url }}#profile">Profile</a></li>
+                    <li><a href="{{ site.url }}#resume">Résumé</a></li>
+                </ul>
+            </div>
+        </header>
+
+    {{ content }}
+
+    <footer class="global-footer">
+        <section class="global-footer__meta grid island">
+            <div class="wrapper">
+                <div class="global-footer__credit grid__item desk-one-third">
+                    {{ site.credit | markdownify }}
+                </div><!--
+
+             --><div class="global-footer__contact grid__item lap-one-half desk-one-third">
+                    <p>
+                        {% for item in site.contact %}
+                            {{ item }}<br />
+                        {% endfor %}
+                    </p>
+                </div><!--
+
+             --><ul class="global-footer__social grid__item lap-one-half desk-one-third nav">
+                    {% for item in site.social %}
+                        <li><a class="ss-icon ss-social-circle" href="{{ item[1] }}">{{ item[0] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section class="global-footer__copyright island">
+            <div class="wrapper">
+                <p>&copy; Copyright {{ site.name }} {{ site.time | date: "%Y" }}</p>
+            </div>
+        </section>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ site.url }}/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+    <script src="{{ site.url }}/js/plugins.js"></script>
+    <script src="{{ site.url }}/js/script.js"></script>
+</body>
+</html>

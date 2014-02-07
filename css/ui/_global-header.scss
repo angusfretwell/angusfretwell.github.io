@@ -1,0 +1,43 @@
+/*------------------------------------*\
+    $GLOBAL-HEADER
+\*------------------------------------*/
+
+
+.global-header {
+    border-bottom: 1px solid $base-ui-color;
+    padding-top: $base-spacing-unit * 1.5;
+    padding-bottom: $base-spacing-unit * 1.25;
+}
+
+    /**
+     * Use a transparent border on features to blend with background image
+     */
+    .global-header--feature {
+        border-bottom: 1px solid rgba(255, 255, 255, .25);
+        color: #fff;
+    }
+
+
+    .global-header__logo {
+        a {
+            @include font-size(22px);
+            @extend .weight--semibold;
+            border: none;
+        }
+    }
+
+
+    .global-header__nav {
+        @include font-size(18px);
+        text-align: right;
+        margin-bottom: 0;
+        display: none;
+
+        @include media-query(desk) {
+            display: inline-block;
+        }
+
+        a {
+            margin-left: $base-spacing-unit * .75;
+        }
+    }

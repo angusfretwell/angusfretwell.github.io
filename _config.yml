@@ -1,0 +1,15 @@
+name: Angus Fretwell
+description: Web developer and designer living in Melbourne, Australia.
+
+credit: Made in Melbourne with [inuit.css](http://inuitcss.com) and [Jekyll](http://jekyllrb.com/). Source available on [Github](http://github.com/angusfretwell).
+contact:
+  - angusfretwell@me.com
+  - +61 400 277 407
+social:
+  Twitter: http://twitter.com/angusfretwell
+  LinkedIn: http://linkedin.com/in/angusfretwell
+  Github: http://github.com/angusfretwell
+  Facebook: http://facebook.com/angusfretwell
+
+url: http://angusfretwell.github.io
+permalink: /:title
