@@ -47,7 +47,7 @@ Firstly, we need to tell Buildstep to install some PHP extensions that are requi
 }
 ```
 
-The PHP buildpack also required that you have a composer.lock file, so let's generate one by running ` composer update  --no-autoloader --ignore-platform-reqs`. Feel free to delete the /vendor directory created by Composer, as we only need the composer.lock file.
+The PHP buildpack also required that you have a composer.lock file, so let's generate one by running `composer update  --no-autoloader --ignore-platform-reqs`. Feel free to delete the /vendor directory created by Composer, as we only need the composer.lock file.
 
 Next up, we create a Procfile to tell Apache where to serve from; this should, of course be our /public directory (or whichever directory contains index.php):
 
