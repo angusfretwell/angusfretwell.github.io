@@ -30,6 +30,12 @@ layout: default
   </header>
 
   <div class="post-content" itemprop="articleBody">
+    {% if page.lede %}
+      <div class="post-lede">
+        {{ page.lede | markdownify }}
+      </div>
+    {% endif %}
+
     {{ content }}
   </div>
 

@@ -4,9 +4,9 @@ title:  Deploying a Craft CMS site with Dokku
 date:   2016-04-03
 categories: craft dokku
 comments: true
+lede: >
+  [Dokku](http://dokku.viewdocs.io/dokku/) is an Heroku-like PaaS based on Docker. You can use it to quickly and simply deploy apps to your own VPS, making it far more economical than Heroku, with little added overhead. This post explains how to deploy [Craft CMS](http://buildwithcraft.com) using Dokku.
 ---
-
-[Dokku](http://dokku.viewdocs.io/dokku/) is an Heroku-like PaaS based on Docker. You can use it to quickly and simply deploy apps to your own VPS, making it far more economical than Heroku, with little added overhead.
 
 Deployments are performed by creating a git remote (dokku@your-dokku-server:app-name) and pushing to it. [Buildstep](https://github.com/progrium/buildstep), a component of Dokku, determines the language and framework used by your application by looking for common files or patterns. For example, a package.json file in the root of a repository suggests a node.js app, while composer.json or index.php suggest a PHP one.
 
