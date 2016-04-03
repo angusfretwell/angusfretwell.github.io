@@ -59,7 +59,7 @@ Lastly, add a .gitkeep file to /craft/storage, to ensure the directory exists af
 
 ### Caveats
 
-Because of the Docker container which will be created for our app has an ephemeral filesystem (meaning that files will not be persisted between deployments), there are a few considerations we should make:
+Because the Docker container which will be created for our app has an ephemeral filesystem (meaning that files will not be persisted between deployments), there are a few considerations we should have in mind:
 
 1. It's wise to disable Craft's automatic updates. This will also prevent the deployed installation getting out-of-sync with the one in version control. You can disable automatic updates by setting [`allowAutoUpdates`](https://craftcms.com/docs/config-settings#allowAutoUpdates) to `false` in craft/config/general.php.
 2. We won't be able to use Craft's default local assets, and will need to use S3, or any of the other asset stores Craft supports to ensure uploads aren't lost between deployments.
