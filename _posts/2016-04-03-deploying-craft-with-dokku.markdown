@@ -3,6 +3,7 @@ layout: post
 title:  Deploying a Craft CMS site with Dokku
 date:   2016-04-03
 categories: craft dokku
+comments: true
 ---
 
 [Dokku](http://dokku.viewdocs.io/dokku/) is an Heroku-like PaaS based on Docker. You can use it to quickly and simply deploy apps to your own VPS, making it far more economical than Heroku, with little added overhead.
