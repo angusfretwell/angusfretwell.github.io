@@ -2,8 +2,8 @@
 layout: post
 title:  Dos and don'ts for publishing ES2015 to npm
 date:   2016-04-03
-categories: craft dokku
-comments: true
+categories: npm javascript
+comments: false
 ---
 
 ## Do: transpile to ES5
