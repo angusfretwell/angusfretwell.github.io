@@ -10,7 +10,7 @@ comments: true
 
 Deployments are performed by creating a git remote (dokku@your-dokku-server:app-name) and pushing to it. [Buildstep](https://github.com/progrium/buildstep), a component of Dokku, determines the language and framework used by your application by looking for common files or patterns. For example, a package.json file in the root of a repository suggests a node.js app, while composer.json or index.php suggest a PHP one.
 
-Once the language has been detected, Dokku creates a generic environment for that language inside a Docker container, and performs conventional tasks such as running `composer install`. Once the build process is complete, the Docker container is exposed at +http://app-name.your-dokku-server.
+Once the language has been detected, Dokku creates a generic environment for that language inside a Docker container, and performs conventional tasks such as running `composer install`. Once the build process is complete, the Docker container is exposed at http://app-name.your-dokku-server.
 
 [Plugins](http://dokku.viewdocs.io/dokku/plugins/) allow the creation of external services like MySQL. By "linking" a MySQL container to an app, Dokku exposes a `DATABASE_URL` environment variable which it can use to connect to the database.
 
