@@ -1,14 +1,18 @@
-name: Angus Fretwell
-description: Web developer and designer living in Melbourne, Australia.
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-credit: Made in Melbourne with [inuit.css](http://inuitcss.com) and [Jekyll](http://jekyllrb.com/). Source available on [Github](https://github.com/angusfretwell/angusfretwell.github.io).
-contact:
-  - angusfretwell@me.com
-  - +61 400 277 407
-social:
-  Twitter: http://twitter.com/angusfretwell
-  LinkedIn: http://linkedin.com/in/angusfretwell
-  Github: http://github.com/angusfretwell
+# Site settings
+title: '~/angusfretwell'
+email: angusfretwell@me.com
+description: Angus is a web developer/designer from Melbourne, Australia.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://angusfretwell.com" # the base hostname & protocol for your site
+twitter_username: angusfretwell
+github_username:  angusfretwell
 
-url: http://angusfretwell.com
-permalink: /:title
+# Build settings
+markdown: kramdown

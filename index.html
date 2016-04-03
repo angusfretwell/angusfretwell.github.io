@@ -1,25 +1,24 @@
 ---
-layout: index
-title: Home
-
-feature: One Quarter Journal
-
-profile: |
-  I'm a web developer and designer living in Melbourne, Australia. I endeavour to design and engineer unique and innovative user experiences. I’ve worked with clients ranging from small, local businesses, to start-ups, and larger companies abroad.
-
-  Currently, I’m working as a front-end developer for [Francis Bond](http://francisbond.com/) in Collingwood.
-
-  Other interests include fine food and wine, and experimental music and film.
-
-resume: Download my [full résumé](/files/resume-2014.pdf) for further details of my experience and ability.
-
-likes:
-  people:
-    Jana Hoang: http://janahoang.net/
-    Sebastian Avilla: http://sebastian-avila.com/
-    Francis Bond: http://francisbond.com/
-  products:
-    Rackspace: http://www.rackspace.com/
-    Sublime Text: http://www.sublimetext.com/
-    Sass: http://sass-lang.com/
+layout: default
 ---
+
+<div class="home">
+  {% for post in site.posts %}
+    {% capture currentyear %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% if currentyear != year %}
+      {% unless forloop.first %}
+        </ul>
+      {% endunless %}
+      <h1 class="page-heading">{{ currentyear }}</h1>
+      <ul class="post-list">
+      {% capture year %}{{ currentyear }}{% endcapture %}
+    {% endif %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%F" }}</span>
+
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
+  {% endfor %}
+</div>
