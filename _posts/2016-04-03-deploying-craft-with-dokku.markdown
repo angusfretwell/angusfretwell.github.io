@@ -35,7 +35,7 @@ For more in-depth instructions on getting set up, see [Getting Started with Dokk
 
 Before we can deploy our Craft site with Dokku, there's a few changes we'll need to make. Note that I'm assuming you have a fairly generic setup, with a /craft directory containing the application and your templates, and a /public directory containing the index.php and .htaccess files. If this isn't the case, you should be able to appropriate the following steps for your project's structure.
 
-Firstly, we need to tell Buildstep to install some PHP extensions that are required by Craft. This is done by create a composer.json file in the root of the repository. We'll also specify a PHP version to use:
+Firstly, we need to tell Buildstep to install some PHP extensions that are required by Craft. This is done by creating a composer.json file in the root of the repository. We'll also specify a PHP version to use:
 
 ```json
 {
@@ -49,7 +49,7 @@ Firstly, we need to tell Buildstep to install some PHP extensions that are requi
 
 The PHP buildpack also required that you have a composer.lock file, so let's generate one by running ` composer update  --no-autoloader --ignore-platform-reqs`. Feel free to delete the /vendor directory created by Composer, as we only need the composer.lock file.
 
-Next up, we create a Procfile to tell Apache where to serve from; this should of course be our /public directory (or whichever directory contains index.php):
+Next up, we create a Procfile to tell Apache where to serve from; this should, of course be our /public directory (or whichever directory contains index.php):
 
 ```
 web: vendor/bin/heroku-php-apache2 public/
@@ -61,7 +61,7 @@ Lastly, add a .gitkeep file to /craft/storage, to ensure the directory exists af
 
 Because of the Docker container which will be created for our app has an ephemeral filesystem (meaning that files will not be persisted between deployments), there are a few considerations we should make:
 
-1. It's wise to disable Craft's automatic updates. This will also prevent the deployed installation getting out-of-sync with the one in version control. You can disabled automatic updates by setting [`allowAutoUpdates`](https://craftcms.com/docs/config-settings#allowAutoUpdates) to `false` in craft/config/general.php.
+1. It's wise to disable Craft's automatic updates. This will also prevent the deployed installation getting out-of-sync with the one in version control. You can disable automatic updates by setting [`allowAutoUpdates`](https://craftcms.com/docs/config-settings#allowAutoUpdates) to `false` in craft/config/general.php.
 2. We won't be able to use Craft's default local assets, and will need to use S3, or any of the other asset stores Craft supports to ensure uploads aren't lost between deployments.
 
 ## Deploying the Craft site
@@ -113,7 +113,7 @@ mysqldump -uroot your-local-db | ssh dokku@your-dokku-server mysql:import
 cat your-local-db.sql | ssh dokku@your-dokku-server mysql:import
 ```
 
-Similarly, you can synchronise your local database with the one of your deployed application using `mysql:export`, and piping it into your local database:
+Similarly, you can synchronize your local database with the one of your deployed application using `mysql:export`, and piping it into your local database:
 
 ```shell
 ssh dokku@your-dokku-server mysql:import craft-dokku-example | mysql -uroot your-local-db
