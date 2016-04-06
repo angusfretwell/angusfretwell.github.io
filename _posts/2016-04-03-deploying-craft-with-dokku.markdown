@@ -12,7 +12,7 @@ Deployments are performed by creating a git remote (dokku@your-dokku-server:app-
 
 Once the language has been detected, Dokku creates a generic environment for that language inside a Docker container, and performs conventional tasks such as running `composer install`. Once the build process is complete, the Docker container is exposed at http://app-name.your-dokku-server.
 
-[Plugins](http://dokku.viewdocs.io/dokku/plugins/) allow the creation of external services like MySQL. By "linking" a MySQL container to an app, Dokku exposes a `DATABASE_URL` environment variable which it can use to connect to the database.
+[Plugins](http://dokku.viewdocs.io/dokku/plugins/) allow the creation of external services like MySQL. Linking a MySQL container to an app exposes a `DATABASE_URL` environment variable which the app can use to connect to the database.
 
 ## Provisioning the server
 
@@ -85,7 +85,7 @@ dokku mysql:create craft-dokku-example
 dokku mysql:link craft-dokku-example craft-dokku-example
 ```
 
-Now, the next time we deploy our site, it will have access to the MySQL instance we created, and have the URL exposed through the `DATABASE_URL` environment variable. Let's configure Craft to use this database by updating /craft/config/db.php:
+Now, the next time we deploy our site, it will have access to the MySQL instance we created through the `DATABASE_URL` environment variable. Let's configure Craft to use this database by updating /craft/config/db.php:
 
 ```php
 <?php
