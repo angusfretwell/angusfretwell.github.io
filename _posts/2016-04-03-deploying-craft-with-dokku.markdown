@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Deploying a Craft CMS site with Dokku
-date:   2016-04-03
+title: Deploying a Craft CMS site with Dokku
+date: 2016-04-03
 categories: craft dokku
 comments: true
 lede: >
