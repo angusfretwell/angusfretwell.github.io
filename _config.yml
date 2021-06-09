@@ -11,7 +11,7 @@ email: angusfretwell@me.com
 description: Angus is a web developer/designer from Melbourne, Australia.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://angusfretwell.com" # the base hostname & protocol for your site
-twitter_username: angusfretwell
+linkedin_username: angusfretwell
 github_username: angusfretwell
 
 # Build settings
