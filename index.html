@@ -1,24 +1,11 @@
----
-layout: default
----
-
-<div class="home">
-  {% for post in site.posts %}
-    {% capture currentyear %}{{ post.date | date: "%Y" }}{% endcapture %}
-    {% if currentyear != year %}
-      {% unless forloop.first %}
-        </ul>
-      {% endunless %}
-      <h1 class="page-heading">{{ currentyear }}</h1>
-      <ul class="post-list">
-      {% capture year %}{{ currentyear }}{% endcapture %}
-    {% endif %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%F" }}</span>
-
-      <h2>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
-    </li>
-  {% endfor %}
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=https://github.com/angusfretwell">
+    <link rel="canonical" href="https://github.com/angusfretwell">        
+</head>
+<body>
+    
+</body>
+</html>
